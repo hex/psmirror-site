@@ -22,7 +22,8 @@
         .quickstart { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 2rem; margin-bottom: 3rem; text-align: left; }
         .quickstart h2 { text-align: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
         .quickstart-steps { display: flex; flex-direction: column; gap: 1rem; }
-        .quickstart-step { display: flex; align-items: flex-start; gap: 1rem; }
+        .quickstart-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+        .quickstart-step { display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; }
         .step-number { background: #0a84ff; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; flex-shrink: 0; }
         .step-content { color: #ccc; line-height: 1.5; padding-top: 0.2rem; }
         .step-content strong { color: #fff; }
@@ -33,7 +34,8 @@
         .diagram { margin-bottom: 3rem; padding: 2rem 1rem; }
         .diagram h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
         .diagram-flow { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
-        .diagram-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.875rem; color: #ccc; }
+        .diagram-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.875rem; color: #ccc; display: flex; align-items: center; gap: 0.5rem; }
+        .diagram-box svg { width: 20px; height: 20px; fill: #0a84ff; flex-shrink: 0; }
         .diagram-arrow { color: #0a84ff; font-size: 1.25rem; }
 
         /* Sections */
@@ -90,13 +92,15 @@
         <div class="quickstart">
             <h2>Quick Start</h2>
             <div class="quickstart-steps">
-                <div class="quickstart-step">
-                    <span class="step-number">1</span>
-                    <div class="step-content"><strong><a href="https://apps.apple.com/app/id6756228220">Install the iOS app</a></strong> from the App Store</div>
-                </div>
-                <div class="quickstart-step">
-                    <span class="step-number">2</span>
-                    <div class="step-content"><strong><a href="https://github.com/hex/mirror-for-photoshop-plugin/releases/latest">Install the Photoshop plugin</a></strong> and load it in Photoshop</div>
+                <div class="quickstart-row">
+                    <div class="quickstart-step">
+                        <span class="step-number">1</span>
+                        <div class="step-content"><strong><a href="https://apps.apple.com/app/id6756228220">Install the iOS app</a></strong> from the App Store</div>
+                    </div>
+                    <div class="quickstart-step">
+                        <span class="step-number">2</span>
+                        <div class="step-content"><strong><a href="https://github.com/hex/mirror-for-photoshop-plugin/releases/latest">Install the plugin</a></strong> in Photoshop</div>
+                    </div>
                 </div>
                 <div class="quickstart-step">
                     <span class="step-number">3</span>
@@ -112,11 +116,20 @@
         <div class="diagram">
             <h2>How It Works</h2>
             <div class="diagram-flow">
-                <div class="diagram-box">Photoshop Plugin</div>
+                <div class="diagram-box">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7.8 11.17c-.36.27-.84.41-1.46.41H8.5V17H7v-6h2.74c.62 0 1.1.14 1.46.41.36.28.54.69.54 1.24v1.28c0 .55-.18.96-.54 1.24zM17 13.31c0 .55-.18.96-.54 1.24-.36.27-.84.41-1.46.41h-1.25V17H12.5v-6h2.74c.62 0 1.1.14 1.46.41.36.28.54.69.54 1.24v.66zM8.5 12.5h1.24c.19 0 .35-.06.46-.17.11-.11.17-.26.17-.46v-.68c0-.2-.06-.35-.17-.46a.622.622 0 0 0-.46-.17H8.5v1.94zm5.25 0h1.24c.19 0 .35-.06.46-.17.11-.11.17-.26.17-.46v-.68c0-.2-.06-.35-.17-.46a.622.622 0 0 0-.46-.17h-1.24v1.94z"/></svg>
+                    Photoshop
+                </div>
                 <span class="diagram-arrow">&rarr;</span>
-                <div class="diagram-box">Relay Server</div>
+                <div class="diagram-box">
+                    <svg viewBox="0 0 24 24"><path d="M4 1h16c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2zm0 2v18h16V3H4zm2 4h12v2H6V7zm0 4h12v2H6v-2zm0 4h8v2H6v-2z"/></svg>
+                    Server
+                </div>
                 <span class="diagram-arrow">&rarr;</span>
-                <div class="diagram-box">iOS App</div>
+                <div class="diagram-box">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/></svg>
+                    iOS App
+                </div>
             </div>
         </div>
 
