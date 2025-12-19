@@ -51,7 +51,8 @@
         .app-store-badge { display: block; }
         .app-store-badge img { height: 54px; }
         .app-store-badge:hover { opacity: 0.85; }
-        .adobe-badge { height: 40px; margin: 0.75rem 0 0.5rem; opacity: 0.85; }
+        .adobe-badge-container { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 0.5rem 1rem; margin-bottom: 1.25rem; display: inline-block; }
+        .adobe-badge-container img { height: 32px; display: block; opacity: 0.9; }
         .links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; align-items: center; }
         .links a { color: #0a84ff; text-decoration: none; border: 2px solid #0a84ff; border-radius: 12px; padding: 0.875rem 1.5rem; font-size: 1rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
         .links a:hover { background: #0a84ff; color: #fff; }
@@ -92,7 +93,6 @@
     <div class="container">
         <img src="/assets/app-icon.png" alt="Mirror for Photoshop" style="width: 128px; height: 128px; border-radius: 24px; margin-bottom: 1.5rem;">
         <h1>Mirror for Photoshop</h1>
-        <img src="/assets/designed-for-photoshop.png" alt="Designed for Adobe Photoshop" class="adobe-badge">
         <p class="subtitle">Real-time Photoshop preview on iOS</p>
         <p class="description">Stream your Photoshop artboards directly to your iPhone or iPad. See exactly how your designs look on the actual device as you work.</p>
 
@@ -200,6 +200,9 @@
     </div>
 
     <footer>
+        <div class="adobe-badge-container">
+            <img src="/assets/designed-for-photoshop.png" alt="Designed for Adobe Photoshop">
+        </div>
         <a href="/support">Support</a>
         <span class="sep">&middot;</span>
         <a href="/privacy">Privacy</a>
